@@ -65,11 +65,12 @@ cp ${RPM_SOURCE_DIR}/kgicon-config-vga .config
 %{__make}
 mv kgicon.o kgicon-vga.o
 
-cp ${RPM_SOURCE_DIR}/kgicon-config-virge .config
+
+rm -f .config && cp ${RPM_SOURCE_DIR}/kgicon-config-virge .config
 %{__make}
 mv kgicon.o kgicon-virge.o
 
-cp ${RPM_SOURCE_DIR}/kgicon-config-riva .config
+rm -f .config && cp ${RPM_SOURCE_DIR}/kgicon-config-riva .config
 %{__make}
 mv kgicon.o kgicon-riva.o
 
@@ -104,7 +105,7 @@ install fb.modes.5 $RPM_BUILD_ROOT%{_mandir}/man5
 install etc/fb.modes.ATI $RPM_BUILD_ROOT%{_sysconfdir}/fb.modes
 
 cd ../setmon
-%{__make} install prefix=$RPM_BUILD_ROOT/usr
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 install sample.multisync $RPM_BUILD_ROOT%{_sysconfdir}/ggi/kgicon.mon
 
 cd ../..
