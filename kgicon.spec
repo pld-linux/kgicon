@@ -43,7 +43,7 @@ Includes:
 Summary:	SVGALib target for LibGII
 Summary(pl):	obs³uga SVGALib dla LibGII
 Group:		Development
-Group(pl):	Programowanie	
+Group(pl):	Programowanie
 Requires:	%{name} = %{version}
 
 %description devel
