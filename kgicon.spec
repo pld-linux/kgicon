@@ -62,23 +62,23 @@ LDFLAGS="-s" ; export LDFLAGS
 %configure
 
 cp ${RPM_SOURCE_DIR}/kgicon-config-vga .config
-make
+%{__make}
 mv kgicon.o kgicon-vga.o
 
 cp ${RPM_SOURCE_DIR}/kgicon-config-virge .config
-make
+%{__make}
 mv kgicon.o kgicon-virge.o
 
 cp ${RPM_SOURCE_DIR}/kgicon-config-riva .config
-make
+%{__make}
 mv kgicon.o kgicon-riva.o
 
 cd ../util/fbset
-make
+%{__make}
 
 cd ../setmon
 %configure
-make
+%{__make}
 
 cd ../..
 
