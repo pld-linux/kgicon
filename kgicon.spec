@@ -13,7 +13,7 @@ Source2:	kgicon-config-virge
 Source3:	kgicon-config-riva
 Patch:		kgicon-virge-accel.patch
 Patch1:		kgicon-riva-comments.patch
-BuildPrereq:	bison		
+BuildRequires:	bison		
 URL:		http://www.ggi-project.org/
 BuildRoot:   	/tmp/%{name}-%{version}-root
 
