@@ -28,7 +28,7 @@ w j±drach 2.2.x
 %package utils
 Summary:	Utilities for KGICON drivers
 Summary(pl):	obs³uga aalib dla LibGII
-Group:		Library
+Group:		Libraries
 Group(pl):	Biblioteki
 Requires:	%{name} = %{version}
 Obsoletes:	fbset
