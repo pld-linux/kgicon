@@ -16,8 +16,6 @@ BuildRequires:	automake
 URL:		http://www.ggi-project.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_sysconfdir		/etc
-
 %description
 KGICON are kernel-level drivers for GGI (General Graphics Interface)
 based on Linux 2.2.x frame-buffer interface.
@@ -108,7 +106,8 @@ cp -r include/* $RPM_BUILD_ROOT%{_includedir}/kgi
 install ../kgicon-*.o $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}/misc
 
 cd ../util/setmon
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 install sample.multisync $RPM_BUILD_ROOT%{_sysconfdir}/ggi/kgicon.mon
 
 %clean
