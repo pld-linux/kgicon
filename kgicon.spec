@@ -1,83 +1,91 @@
 Summary:	KGI - Kernel Graphics Interface for FB-console	
 Summary(pl):	KGI - Kernel Graphics Interface
 Name:		kgicon
-Version:	990710
+Version:	20010225
 Release:	1
 Group:		Base
+Group(de):	Gründsätzlich
 Group(pl):	Podstawowe
-Copyright:	GPL
-#Source0:	ftp://ftp.ggi-project.org/pub/ggi/ggi-snapshots/ggi-devel-%{version}.tar.gz
-Source0:	%{name}-devel-%{version}.tar.gz
-Source1:	kgicon-config-vga
-Source2:	kgicon-config-virge
-Source3:	kgicon-config-riva
-Patch:		kgicon-virge-accel.patch
-Patch1:		kgicon-riva-comments.patch
-BuildRequires:	bison		
+License:	GPL
+Source0:	ftp://ftp.ggi-project.org/pub/ggi/ggi-snapshots/ggi-devel-%{name}-%{version}.tar.bz2
+Source1:	%{name}-config-vga
+Source2:	%{name}-config-virge
+Source3:	%{name}-config-riva
+BuildRequires:	bison
+BuildRequires:	autoconf
+BuildRequires:	automake
 URL:		http://www.ggi-project.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-KGICON are kernel-level drivers for GGI (General Graphics Interface) based
-on Linux 2.2.x frame-buffer interface
+KGICON are kernel-level drivers for GGI (General Graphics Interface)
+based on Linux 2.2.x frame-buffer interface
 
 %description -l pl
-KGICON to niskopoziomowe sterowniki dla GGI oparte o interfejs frame-buffer 
-w j±drach 2.2.x
+KGICON to niskopoziomowe sterowniki dla GGI oparte o interfejs
+frame-buffer w j±drach 2.2.x
 
 %package utils
 Summary:	Utilities for KGICON drivers
 Summary(pl):	obs³uga aalib dla LibGII
 Group:		Libraries
+Group(de):	Libraries
+Group(es):	Bibliotecas
+Group(fr):	Librairies
 Group(pl):	Biblioteki
 Requires:	%{name} = %{version}
 Obsoletes:	fbset
 
 %description utils 
-Utilities for KGICON.
-Includes:
-  setmon - utility for setting monitor parameters 
-  fbset - utility for setting framebuffer modes
+Utilities for KGICON. Includes: setmon - utility for setting monitor
+parameters fbset - utility for setting framebuffer modes
+
+%description -l pl utils
+Programy urzytkowe dla KGICON. Zawieraj±: setmon - narzêdzie do ustawiania
+parametrów monitora, fbset - narzêdzie to ustawiania trybów framebuffera.
 
 %package devel
-Summary:	SVGALib target for LibGII
-Summary(pl):	obs³uga SVGALib dla LibGII
+Summary:	development files
+Summary(pl):	pliki dla developerów
 Group:		Development
+Group(de):	Entwicklung
 Group(pl):	Programowanie
 Requires:	%{name} = %{version}
 
 %description devel
 Header files for KGICON
 
+%description -l pl devel
+Pliki nag³ówkowe dla KGICON
+
 %define _sysconfdir /etc
 
 %prep
 %setup -qn degas/%{name}
-%patch -p1
-%patch1 -p1
 
 %build
 cd kgi
-LDFLAGS="-s" ; export LDFLAGS
 %configure
 
 cp ${RPM_SOURCE_DIR}/kgicon-config-vga .config
 %{__make}
-mv kgicon.o kgicon-vga.o
-
+mv kgicon.o ../kgicon-vga.o
 
 rm -f .config && cp ${RPM_SOURCE_DIR}/kgicon-config-virge .config
-%{__make}
-mv kgicon.o kgicon-virge.o
+%{__make} realclean depend all
+mv kgicon.o ../kgicon-virge.o
 
-rm -f .config && cp ${RPM_SOURCE_DIR}/kgicon-config-riva .config
-%{__make}
-mv kgicon.o kgicon-riva.o
+#rm -f .config && cp ${RPM_SOURCE_DIR}/kgicon-config-riva .config
+#%{__make} realclean depend all
+#mv kgicon.o ../kgicon-riva.o
 
 cd ../util/fbset
 %{__make}
 
 cd ../setmon
+automake -a -c -i
+aclocal
+autoconf
 %configure
 %{__make}
 
@@ -92,11 +100,11 @@ install -d $RPM_BUILD_ROOT/%{_mandir}/{man5,man8}
 install -d $RPM_BUILD_ROOT/%{_includedir}
 install -d $RPM_BUILD_ROOT/lib/modules/`uname -r`/misc
 
-cp -r include/kgi $RPM_BUILD_ROOT/usr/include/kgi
+cp -r include/kgi $RPM_BUILD_ROOT%{_includedir}/kgi
 
 cd kgi
 cp -r include/* $RPM_BUILD_ROOT%{_includedir}/kgi/
-install kgicon-*.o $RPM_BUILD_ROOT/lib/modules/`uname -r`/misc
+install ../kgicon-*.o $RPM_BUILD_ROOT/lib/modules/`uname -r`/misc
 
 cd ../util/fbset
 install fbset $RPM_BUILD_ROOT/%{_sbindir}
@@ -124,7 +132,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc util/setmon/README.gz
 %doc util/setmon/NEWS.gz
-%doc util/fbset/etc/*
+%doc util/fbset%{_sysconfdir}/*
 %config %{_sysconfdir}/fb.modes
 %config %{_sysconfdir}/ggi/kgicon.mon
 %attr(755,root,root) %{_sbindir}/fbset
