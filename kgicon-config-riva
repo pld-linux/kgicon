@@ -22,4 +22,8 @@ CLK_TYPE=nvriva
 DAC_CLASS=nVidia
 DAC_TYPE=nvriva
 
+# accel driver
+VIDEO_CLASS=none
+VIDEO_TYPE=none
+
 # version

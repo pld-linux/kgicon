@@ -22,4 +22,8 @@ CLK_TYPE=s3idac
 DAC_CLASS=S3
 DAC_TYPE=virge
 
+# accel driver
+VIDEO_CLASS=none
+VIDEO_TYPE=none
+
 # version

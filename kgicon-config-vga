@@ -22,4 +22,8 @@ CLK_TYPE=vga
 DAC_CLASS=IBM
 DAC_TYPE=vga
 
+# accel driver
+VIDEO_CLASS=none
+VIDEO_TYPE=none
+
 # version
