@@ -15,7 +15,7 @@ Patch:		kgicon-virge-accel.patch
 Patch1:		kgicon-riva-comments.patch
 BuildRequires:	bison		
 URL:		http://www.ggi-project.org/
-BuildRoot:   	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 KGICON are kernel-level drivers for GGI (General Graphics Interface) based
@@ -82,7 +82,6 @@ make
 
 cd ../..
 
-
 %install
 rm -rf $RPM_BUILD_ROOT
 
@@ -98,13 +97,11 @@ cd kgi
 cp -r include/* $RPM_BUILD_ROOT%{_includedir}/kgi/
 install kgicon-*.o $RPM_BUILD_ROOT/lib/modules/`uname -r`/misc
 
-
 cd ../util/fbset
 install fbset $RPM_BUILD_ROOT/%{_sbindir}
 install fbset.8 $RPM_BUILD_ROOT%{_mandir}/man8
 install fb.modes.5 $RPM_BUILD_ROOT%{_mandir}/man5
 install etc/fb.modes.ATI $RPM_BUILD_ROOT%{_sysconfdir}/fb.modes
-
 
 cd ../setmon
 make install prefix=$RPM_BUILD_ROOT/usr
