@@ -4,8 +4,6 @@ Name:		kgicon
 Version:	20010225
 Release:	1
 Group:		Base
-Group(de):	Gr¸nds‰tzlich
-Group(pl):	Podstawowe
 License:	GPL
 Source0:	ftp://ftp.ggi-project.org/pub/ggi/ggi-snapshots/ggi-devel-%{name}-%{version}.tar.bz2
 Source1:	%{name}-config-vga
@@ -29,13 +27,6 @@ frame-buffer w j±drach 2.2.x
 Summary:	Utilities for KGICON drivers
 Summary(pl):	obs≥uga aalib dla LibGII
 Group:		Libraries
-Group(de):	Libraries
-Group(es):	Bibliotecas
-Group(fr):	Librairies
-Group(pl):	Biblioteki
-Group(pt_BR):	Bibliotecas
-Group(ru):	‚…¬Ã…œ‘≈À…
-Group(uk):	‚¶¬Ã¶œ‘≈À…
 Requires:	%{name} = %{version}
 Obsoletes:	fbset
 
@@ -51,8 +42,6 @@ parametrÛw monitora, fbset - narzÍdzie to ustawiania trybÛw framebuffera.
 Summary:	development files
 Summary(pl):	pliki dla developerÛw
 Group:		Development
-Group(de):	Entwicklung
-Group(pl):	Programowanie
 Requires:	%{name} = %{version}
 
 %description devel
