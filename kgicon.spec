@@ -15,6 +15,8 @@ BuildRequires:	automake
 URL:		http://www.ggi-project.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_sysconfdir		/etc
+
 %description
 KGICON are kernel-level drivers for GGI (General Graphics Interface)
 based on Linux 2.2.x frame-buffer interface
@@ -51,8 +53,6 @@ Header files for KGICON
 %description devel -l pl
 Pliki nag³ówkowe dla KGICON
 
-%define _sysconfdir /etc
-
 %prep
 %setup -qn degas/%{name}
 
@@ -76,8 +76,8 @@ cd ../util/fbset
 %{__make}
 
 cd ../setmon
-automake -a -c -i
-aclocal
+%{__automake}
+%{__aclocal}
 %{__autoconf}
 %configure
 %{__make}
@@ -86,12 +86,8 @@ cd ../..
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-install -d $RPM_BUILD_ROOT/%{_sbindir}
-install -d $RPM_BUILD_ROOT/%{_sysconfdir}/ggi
-install -d $RPM_BUILD_ROOT/%{_mandir}/{man5,man8}
-install -d $RPM_BUILD_ROOT/%{_includedir}
-install -d $RPM_BUILD_ROOT/lib/modules/`uname -r`/misc
+install -d $RPM_BUILD_ROOT{%{_sbindir},%{_sysconfdir}/ggi,%{_mandir}/{man5,man8}} \
+	$RPM_BUILD_ROOT{%{_includedir},/lib/modules/`uname -r`/misc}
 
 cp -r include/kgi $RPM_BUILD_ROOT%{_includedir}/kgi
 
@@ -110,7 +106,6 @@ cd ../setmon
 install sample.multisync $RPM_BUILD_ROOT%{_sysconfdir}/ggi/kgicon.mon
 
 cd ../..
-gzip -9nf kgi/README.* util/setmon/README util/setmon/NEWS
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -122,8 +117,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files utils
 %defattr(644,root,root,755)
-%doc util/setmon/README.gz
-%doc util/setmon/NEWS.gz
+%doc util/setmon/README
+%doc util/setmon/NEWS
 %doc util/fbset%{_sysconfdir}/*
 %config %{_sysconfdir}/fb.modes
 %config %{_sysconfdir}/ggi/kgicon.mon
