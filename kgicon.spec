@@ -104,7 +104,7 @@ install fb.modes.5 $RPM_BUILD_ROOT%{_mandir}/man5
 install etc/fb.modes.ATI $RPM_BUILD_ROOT%{_sysconfdir}/fb.modes
 
 cd ../setmon
-make install prefix=$RPM_BUILD_ROOT/usr
+%{__make} install prefix=$RPM_BUILD_ROOT/usr
 install sample.multisync $RPM_BUILD_ROOT%{_sysconfdir}/ggi/kgicon.mon
 
 cd ../..
