@@ -1,4 +1,4 @@
-Summary:	KGI - Kernel Graphics Interface for FB-console	
+Summary:	KGI - Kernel Graphics Interface for FB-console
 Summary(pl):	KGI - Kernel Graphics Interface
 Name:		kgicon
 Version:	20010225
@@ -30,13 +30,14 @@ Group:		Libraries
 Requires:	%{name} = %{version}
 Obsoletes:	fbset
 
-%description utils 
+%description utils
 Utilities for KGICON. Includes: setmon - utility for setting monitor
 parameters fbset - utility for setting framebuffer modes
 
-%description -l pl utils
-Programy u¿ytkowe dla KGICON. Zawieraj±: setmon - narzêdzie do ustawiania
-parametrów monitora, fbset - narzêdzie to ustawiania trybów framebuffera.
+%description utils -l pl
+Programy u¿ytkowe dla KGICON. Zawieraj±: setmon - narzêdzie do
+ustawiania parametrów monitora, fbset - narzêdzie to ustawiania trybów
+framebuffera.
 
 %package devel
 Summary:	development files
@@ -47,7 +48,7 @@ Requires:	%{name} = %{version}
 %description devel
 Header files for KGICON
 
-%description -l pl devel
+%description devel -l pl
 Pliki nag³ówkowe dla KGICON
 
 %define _sysconfdir /etc
@@ -117,7 +118,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc kgi/README.*
-/lib/modules/*/misc/* 
+/lib/modules/*/misc/*
 
 %files utils
 %defattr(644,root,root,755)
@@ -128,7 +129,7 @@ rm -rf $RPM_BUILD_ROOT
 %config %{_sysconfdir}/ggi/kgicon.mon
 %attr(755,root,root) %{_sbindir}/fbset
 %attr(755,root,root) %{_sbindir}/setmon
- 
+
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/kgi
