@@ -67,17 +67,17 @@ Pliki nag³ówkowe dla KGICON
 cd kgi
 %configure
 
-cp ${RPM_SOURCE_DIR}/kgicon-config-vga .config
+cp -f %{SOURCE1} .config
 %{__make}
-mv kgicon.o ../kgicon-vga.o
+mv -f kgicon.o ../kgicon-vga.o
 
-rm -f .config && cp ${RPM_SOURCE_DIR}/kgicon-config-virge .config
+rm -f .config && cp -f %{SOURCE2} .config
 %{__make} realclean depend all
-mv kgicon.o ../kgicon-virge.o
+mv -f kgicon.o ../kgicon-virge.o
 
-#rm -f .config && cp ${RPM_SOURCE_DIR}/kgicon-config-riva .config
+#rm -f .config && cp -f %{SOURCE3} .config
 #%{__make} realclean depend all
-#mv kgicon.o ../kgicon-riva.o
+#mv -f kgicon.o ../kgicon-riva.o
 
 cd ../util/fbset
 %{__make}
@@ -117,8 +117,7 @@ cd ../setmon
 install sample.multisync $RPM_BUILD_ROOT%{_sysconfdir}/ggi/kgicon.mon
 
 cd ../..
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man*/* \
-	kgi/README.* util/setmon/README util/setmon/NEWS
+gzip -9nf kgi/README.* util/setmon/README util/setmon/NEWS
 
 %clean
 rm -rf $RPM_BUILD_ROOT
