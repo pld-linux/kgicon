@@ -135,7 +135,3 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/kgi
-
-%changelog
-* Sun Jul 11 1999 Jacek Konieczny <jajcus@pld.org.pl>
-- New spec
