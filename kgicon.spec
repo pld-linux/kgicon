@@ -41,7 +41,7 @@ Utilities for KGICON. Includes: setmon - utility for setting monitor
 parameters fbset - utility for setting framebuffer modes
 
 %description -l pl utils
-Programy urzytkowe dla KGICON. Zawieraj±: setmon - narzêdzie do ustawiania
+Programy u¿ytkowe dla KGICON. Zawieraj±: setmon - narzêdzie do ustawiania
 parametrów monitora, fbset - narzêdzie to ustawiania trybów framebuffera.
 
 %package devel
