@@ -42,8 +42,8 @@ Programy u¿ytkowe dla KGICON. Zawieraj± setmon - narzêdzie do
 ustawiania parametrów monitora.
 
 %package devel
-Summary:	development files
-Summary(pl):	pliki dla programistów
+Summary:	Header files for KGICON
+Summary(pl):	Pliki nag³ówkowe KGICON
 Group:		Development
 Requires:	%{name} = %{version}
 
@@ -51,7 +51,7 @@ Requires:	%{name} = %{version}
 Header files for KGICON.
 
 %description devel -l pl
-Pliki nag³ówkowe dla KGICON.
+Pliki nag³ówkowe KGICON.
 
 %package -n kernel-video-kgicon
 Summary:	KGI - Kernel Graphics Interface for FB-console
