@@ -83,7 +83,7 @@ rm -f .config && cp -f %{SOURCE2} .config
 mv -f kgicon.o ../kgicon-virge.o
 
 #rm -f .config && cp -f %{SOURCE3} .config
-#%{__make} realclean depend all
+#%%{__make} realclean depend all
 #mv -f kgicon.o ../kgicon-riva.o
 
 cd ../util/setmon
