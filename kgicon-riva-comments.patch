@@ -1,0 +1,24 @@
+diff -dur kgicon.orig/kgi/chipset/nVidia/riva_hw.c kgicon/kgi/chipset/nVidia/riva_hw.c
+--- kgicon.orig/kgi/chipset/nVidia/riva_hw.c	Mon Jun 28 07:19:06 1999
++++ kgicon/kgi/chipset/nVidia/riva_hw.c	Sun Jul 11 15:38:42 1999
+@@ -1025,7 +1025,7 @@
+             break;
+     }
+ /*NOTICE("8"); */
+-/*    LOAD_FIXED_STATE(Riva,FIFO); /* FIX ME*/ */
++/*    LOAD_FIXED_STATE(Riva,FIFO);  FIX ME */
+ /*NOTICE("9"); */
+     /*
+      * Load HW mode state.
+@@ -1046,8 +1046,8 @@
+     /*
+      * Turn off VBlank enable and reset.
+      */
+-/*    *(chip->VBLANKENABLE) = 0;		/* FIXME*/ */
+-/*    *(chip->VBLANK)       = chip->VBlankBit; /*FIXME*/ */
++/*    *(chip->VBLANKENABLE) = 0;		 FIXME */
++/*    *(chip->VBLANK)       = chip->VBlankBit; FIXME */
+     /*
+      * Set interrupt enable.
+      */    
+Only in kgicon/kgi/chipset/nVidia: riva_hw.c~
