@@ -6,6 +6,7 @@ Release:	1
 Group:		Base
 License:	GPL
 Source0:	ftp://ftp.ggi-project.org/pub/ggi/ggi-snapshots/ggi-devel-%{name}-%{version}.tar.bz2
+# Source0-md5:	5d3a1c2a5b0929286af40ca026cb4ffa
 Source1:	%{name}-config-vga
 Source2:	%{name}-config-virge
 Source3:	%{name}-config-riva
