@@ -78,7 +78,7 @@ cd ../util/fbset
 cd ../setmon
 automake -a -c -i
 aclocal
-autoconf
+%{__autoconf}
 %configure
 %{__make}
 
