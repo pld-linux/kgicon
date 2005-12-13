@@ -116,7 +116,7 @@ rm -rf $RPM_BUILD_ROOT
 %files utils
 %defattr(644,root,root,755)
 %doc kgicon/util/setmon/{AUTHORS,NEWS,README}
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/ggi/kgicon.mon
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/ggi/kgicon.mon
 %attr(755,root,root) %{_sbindir}/setmon
 
 %files devel
