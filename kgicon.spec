@@ -66,7 +66,7 @@ frame-buffer w j±drach 2.2.x.
 
 %prep
 %setup -qn degas
-%patch -p1
+%patch0 -p1
 
 %build
 cd kgicon/kgi
