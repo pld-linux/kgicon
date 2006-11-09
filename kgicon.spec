@@ -28,7 +28,7 @@ frame-buffer w j±drach 2.2.x.
 Summary:	Utilities for KGICON drivers
 Summary(pl):	Narzêdzia do sterowników KGICON
 Group:		Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Obsoletes:	fbset
 
 %description utils
@@ -43,7 +43,7 @@ ustawiania parametrów monitora.
 Summary:	Header files for KGICON
 Summary(pl):	Pliki nag³ówkowe KGICON
 Group:		Development
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for KGICON.
