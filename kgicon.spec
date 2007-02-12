@@ -1,5 +1,5 @@
 Summary:	KGI - Kernel Graphics Interface for FB-console
-Summary(pl):	KGI - Kernel Graphics Interface dla konsoli FB
+Summary(pl.UTF-8):   KGI - Kernel Graphics Interface dla konsoli FB
 Name:		kgicon
 Version:	20010313
 Release:	1
@@ -20,13 +20,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 KGICON are kernel-level drivers for GGI (General Graphics Interface)
 based on Linux 2.2.x frame-buffer interface.
 
-%description -l pl
+%description -l pl.UTF-8
 KGICON to niskopoziomowe sterowniki dla GGI oparte o interfejs
-frame-buffer w j±drach 2.2.x.
+frame-buffer w jÄ…drach 2.2.x.
 
 %package utils
 Summary:	Utilities for KGICON drivers
-Summary(pl):	Narzêdzia do sterowników KGICON
+Summary(pl.UTF-8):   NarzÄ™dzia do sterownikÃ³w KGICON
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	fbset
@@ -35,34 +35,34 @@ Obsoletes:	fbset
 Utilities for KGICON. Includes setmon - utility for setting monitor
 parameters.
 
-%description utils -l pl
-Programy u¿ytkowe dla KGICON. Zawieraj± setmon - narzêdzie do
-ustawiania parametrów monitora.
+%description utils -l pl.UTF-8
+Programy uÅ¼ytkowe dla KGICON. ZawierajÄ… setmon - narzÄ™dzie do
+ustawiania parametrÃ³w monitora.
 
 %package devel
 Summary:	Header files for KGICON
-Summary(pl):	Pliki nag³ówkowe KGICON
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe KGICON
 Group:		Development
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for KGICON.
 
-%description devel -l pl
-Pliki nag³ówkowe KGICON.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe KGICON.
 
 %package -n kernel-video-kgicon
 Summary:	KGI - Kernel Graphics Interface for FB-console
-Summary(pl):	KGI - Kernel Graphics Interface
+Summary(pl.UTF-8):   KGI - Kernel Graphics Interface
 Group:		Base/Kernel
 
 %description -n kernel-video-kgicon
 KGICON are kernel-level drivers for GGI (General Graphics Interface)
 based on Linux 2.2.x frame-buffer interface.
 
-%description -n kernel-video-kgicon -l pl
+%description -n kernel-video-kgicon -l pl.UTF-8
 KGICON to niskopoziomowe sterowniki dla GGI oparte o interfejs
-frame-buffer w j±drach 2.2.x.
+frame-buffer w jÄ…drach 2.2.x.
 
 %prep
 %setup -qn degas
