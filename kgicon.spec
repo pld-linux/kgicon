@@ -1,5 +1,5 @@
 Summary:	KGI - Kernel Graphics Interface for FB-console
-Summary(pl.UTF-8):   KGI - Kernel Graphics Interface dla konsoli FB
+Summary(pl.UTF-8):	KGI - Kernel Graphics Interface dla konsoli FB
 Name:		kgicon
 Version:	20010313
 Release:	1
@@ -26,7 +26,7 @@ frame-buffer w jądrach 2.2.x.
 
 %package utils
 Summary:	Utilities for KGICON drivers
-Summary(pl.UTF-8):   Narzędzia do sterowników KGICON
+Summary(pl.UTF-8):	Narzędzia do sterowników KGICON
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	fbset
@@ -41,7 +41,7 @@ ustawiania parametrów monitora.
 
 %package devel
 Summary:	Header files for KGICON
-Summary(pl.UTF-8):   Pliki nagłówkowe KGICON
+Summary(pl.UTF-8):	Pliki nagłówkowe KGICON
 Group:		Development
 Requires:	%{name} = %{version}-%{release}
 
@@ -53,7 +53,7 @@ Pliki nagłówkowe KGICON.
 
 %package -n kernel-video-kgicon
 Summary:	KGI - Kernel Graphics Interface for FB-console
-Summary(pl.UTF-8):   KGI - Kernel Graphics Interface
+Summary(pl.UTF-8):	KGI - Kernel Graphics Interface
 Group:		Base/Kernel
 
 %description -n kernel-video-kgicon
