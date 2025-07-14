@@ -66,7 +66,7 @@ frame-buffer w jądrach 2.2.x.
 
 %prep
 %setup -qn degas
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 cd kgicon/kgi
